@@ -1,0 +1,98 @@
+% ---------------------------------------------
+%                  INSTRUKTIONER 
+%----------------------------------------------
+
+% 1) Lägg denna LaTeX-fil i din trädstruktur och
+%    döp den till titelsida.tex. 
+%    Skriv input{titelsida} efter 
+%    \begin{document} i main.tex filen
+
+% 2) Skriv \usepackage{tikz} och
+%    \usepackage{graphicx} i din ´main.tex fil 
+%    (innan \begin{document}
+
+% 3) Fyll i information på raderna 
+%    (Exjobbsnummer, Exjobbspoäng, Datum då 
+%    exjobbet blev godkänt, Exjobbstitel,
+%    Underrubrik, Så många namn du vill  )
+
+%--------------------------------------------------
+%           RÖR INTE DETTA IFALL DU INTE 
+%            VILL MODIFIERA TITELSIDAN
+%--------------------------------------------------
+
+\newcommand{\Exjobbsnummer}[1]{
+\begin{tikzpicture}[overlay, remember picture]
+\path (current page.north east) ++(-1,-1) node[below left] {{\small #1}};
+\end{tikzpicture}
+}
+
+\newcommand{\Examensjobbspoang}[1]{
+\begin{tikzpicture}[overlay, remember picture]
+\path (current page.north east) ++(-1,-1.5) node[below left] {{\normalsize \scshape Examensarbete #1 HP}};
+\end{tikzpicture}
+}
+
+\newcommand{\datum}[1]{
+\begin{tikzpicture}[overlay, remember picture]
+\path (current page.north east) ++(-1,-2.0) node[below left] {{\normalsize #1}};
+\end{tikzpicture}}
+
+\newcommand{\storlitentitel}[2]{
+\center
+\rule[0.2cm]{13cm}{0.1cm}
+{ \huge \bfseries #1}\\[0.4cm] % Title of your document
+{\Large \slshape #2}\\[0.4cm]
+\rule[0.2cm]{13cm}{0.1cm}\\[3cm]
+
+}
+
+\newcommand{\Namn}[2]{
+\begin{minipage}{0.4\textwidth}
+\normalsize
+\centering
+#1 \textsc{#2}\\
+\end{minipage}\\
+}
+
+\newcommand{\LoggaSwe}{
+\textsc{\Huge Curso \\[0.3cm] }\\[0.7cm]
+%\includegraphics[scale=.1]{Uppsala_University_seal_svg.png}\\[1.5cm]
+}
+
+\newcommand{\LoggaEng}{
+\textsc{\Huge Curso}\\[0.7cm]
+%\includegraphics[scale=.1]{}\\[0.5cm]
+}
+
+
+% -----------------------------------------------
+%           HÄR BÖRJAR TITELSIDAN
+%------------------------------------------------
+\begin{titlepage}
+
+\center 
+ 
+%-------------------------------------------------
+%	INFORMATION ATT FYLLA I
+%-------------------------------------------------
+
+%\Exjobbsnummer{XXX - xxx - XX}
+
+%\Examensjobbspoang{15}
+
+\datum{Juni 2021}
+
+%\LoggaSwe
+% \LoggaEng - Byt till engelska
+
+
+\storlitentitel{Armando RC}{Curso esencial - en html5 y css3}
+
+\Namn{-}{Apuntes}
+%\Namn{Användare}{Användaresson}
+%\Namn{Förnamn}{Efternamn}
+
+\vfill
+
+\end{titlepage}

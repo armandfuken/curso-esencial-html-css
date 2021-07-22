@@ -1,0 +1,30 @@
+
+/* {*/
+    /*
+    *canal alpha se agregan 2 ultimos valores
+    *para darle elvalor de transparencía de 
+    * 00 a ff
+    */
+        /* color:#212121ff;*/
+   
+        /*color: rgb(0, 255, 255)*/
+    /*
+    *canal alpha se usa rgba y en el ultimo 
+    *parametro se agrega el valor de transparencía
+    * de 0 a 255
+    */
+        /*color: rgba(0, 0, 255, 2)*/
+
+/*}*/
+
+
+/*los a <a>(ancla) no cambian al heredar el color de body
+* no se utiliza el selector de grupo, pero no porque afectaria
+* al ancla en futuros cambios, por lo que se separan
+*/
+body{
+    color: #212121;
+}
+a{
+    color: #212121;
+}
