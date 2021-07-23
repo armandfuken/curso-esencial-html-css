@@ -2,23 +2,106 @@
 
 \subsection{Colores}
 
-Los colores canal alpha se agregan 2 ultimos valores para darle elvalor de transparencía de  00 a ff
-\begin{lstlisting}[caption={Colores en css con hexadecimal},label={css: colores-hexadecimal},language=css]
-    color:#212121ff;
+Los colores en CSS son manejados en hexadecimal y en rgb, la nomenclatura para el uso de
+colores en "hexadecimal" esta compuesta por 6 digitos 00 00 00 y estos empiezan del 0 al f,
+es decir 16 valores, del 0 al 9 y de la "a" a la "f".
+Para agregar color al contenido de un body, se realiza como en el codigo Listing(\ref{css:colores-hexadecimal})
+\begin{lstlisting}[caption={Colores en css con hexadecimal},label={css:colores-hexadecimal},language=css]
+    body{
+    color:#212121;
+    }
+\end{lstlisting}
+Los colores alfa o canal alfa, es la opacidad de un pixel en una imagen, es decir actua
+como una máscara de transparencía. Para realizar esto en css, se agregan 2 valores al final,
+para obtener un resultado total transparente el valor es 00, un grado de opacidad seria 99 y para que quede 
+ totalmente cubierto se agrega ff, asi como se observa en el codigo Listing(\ref{css:colores-hexadecimal-alfa})
+ \begin{lstlisting}[caption={Colores en css con hexadecimal},label={css:colores-hexadecimal-alfa},language=css]
+    
+    body{
+        color:#21212100; /* transparente "00"*/
+        }
+
+    body{
+    color:#21212199; /* grado de opacidad "99"*/
+    }
+    
+    body{
+    color:#212121ff; /* cubierto total "ff"*/
+    }
+\end{lstlisting}
+Para hacer uso de rgb, se utiliza la funcion rgb() la cual lleva tres parametros, red, green, blue,
+estos estan definidos del 0 al 255, aplicando la funcion con los parametros se veria algo así
+\textbf{rgb(0,0,0)}, es decir el valor 255 en el primer parametro equivale a rojo,
+el segundo parametro con valor 255 equivale a verde y el ultimo parametro con el valor
+255 equivale a azul. Un ejemplo del uso de esta funcion se aprecia en el codigo Listing(\ref{css:colores-rgb})
+\begin{lstlisting}[caption={Colores en css con hexadecimal},label={css:colores-rgb},language=css]
+    body{
+    color:rgb(0,255,255);
+    }
+\end{lstlisting}
+y para agregar el canal alfa con hexadecimal, se utiliza
+lla funcion rgba, de la misma manera se agrega un parametro,
+en este caso solo es 1 y puede ser de 0 a 255, es decir
+de 0 es totalmente transparente y 255 totalmente solido. 
+Un ejemplo deluso de esta funcion se aprecia en el codigo Listing(\ref{css:colores-rgba})
+
+\begin{lstlisting}[caption={Colores en css con hexadecimal},label={css:colores-rgba},language=css]
+    body{
+    color:rgba(0,0,255,2);
+    }
 \end{lstlisting}
 
-\begin{lstlisting}[caption={Colores en css con hexadecimal},label={css: colores-rgb},language=css]
-    color: rgb(0, 255, 255);
+Por norma los vinculos o los anclas <a>, no cambian al heredar el color, en este
+caso body, es decir no se utiliza el \textbf{\textit{"selector de grupo"}}, esto debido
+a que si se desean realizar cambios a body afectara en otras caracteristicas a la ancla.
+Separamos el estilo como se aprecia en el codigo Listing(\ref{css:separar-body-ancla})
+
+\begin{lstlisting}[caption={Colores en css con hexadecimal},label={css:colores-rgba},language=css]
+    body{
+        color:#212121ff;
+    }
+    a{
+        color:#212121ff;
+    }
 \end{lstlisting}
 
 
-canal alpha se usa rgba y en el ultimo parametro se agrega 
-el valor de transparencía de 0 a 255
-\begin{lstlisting}[caption={Colores en css con hexadecimal},label={css: colores-rgba},language=css]
-    color: rgba(0, 0, 255, 2)
-\end{lstlisting}
-s
+\subsection{Valores y unidades}
 
-Los a <a>(ancla) no cambian al heredar el color de body 
-no se utiliza el selector de grupo, pero no porque afectaria 
-al ancla en futuros cambios, por lo que se separan
+
+Existen 2 tipos de valores relativos y absolutos.
+
+El valor de un pixel, es la unidad minima de tu pantalla, y este es parte de los valores absolutos.
+\newline
+¿Cuantos pixeles tiene tu monitor? fullhd 1920 x 1080, hd 1024x720,
+regularmente una laptop tiene 1440 x 720 o 1730 ancho x 768 alto.
+
+Es importante conocer el tamaño de los equipos para saber que tipos de valores se utilizaran.
+
+
+\textbf{ unidades de medida: }
+
+\begin{itemize}
+    \item em
+    \item ex
+    \item ch
+    \item rem
+    \item lh
+    \item vw
+    \item vh
+    \item vmin
+    \item vw
+    \item vmax
+\end{itemize}
+
+\textbf{ unidades de medida: }
+
+\begin{itemize}
+    \item cm
+    \item mm
+    \item Q
+    \item in
+    \item pc
+    \item pt
+    \item px
+\end{itemize}
